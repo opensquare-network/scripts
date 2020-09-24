@@ -1,0 +1,87 @@
+export default {
+  "CurrencyId": {
+    "_enum": [
+      "Native",
+      "USDT",
+      "AUSD",
+      "DOT"
+    ]
+  },
+  "OracleKey": "CurrencyId",
+  "Address": "AccountId",
+  "LookupSource": "AccountId",
+  "Amount": "i128",
+  "CurrencyIdOf": "CurrencyId",
+  "Price": "FixedU128",
+  "SdDigest": "H256",
+  "BountyId": "H256",
+  "BountyState": {
+    "_enum": [
+      "Applying",
+      "Accepted",
+      "Rejected",
+      "Closed",
+      "CouncilClosed",
+      "Assigned",
+      "Outdated",
+      "Submitted",
+      "Resolved"
+    ]
+  },
+  "BountyCategory": {
+    "_enum": [
+      "Development",
+      "Design",
+      "Document"
+    ]
+  },
+  "BountyMetaData": {
+    "owner": "AccountId",
+    "currencyId": "CurrencyId",
+    "payment": "Balance",
+    "digest": "SdDigest"
+  },
+  "Bounty": {
+    "_enum": {
+      "V1": "BountyMetaData"
+    }
+  },
+  "SettingData": {
+    "category": "BountyCategory"
+  },
+  "CloseReason": {
+    "_enum": [
+      "Outdated",
+      "Resolved"
+    ]
+  },
+  "HunterBountyState": {
+    "_enum": [
+      "Hunting",
+      "Processing"
+    ]
+  },
+  "BountyRemarkCollaborationResult": {
+    "_enum": [
+      "Bad",
+      "NotGood",
+      "Fine",
+      "Good",
+      "Perfect"
+    ]
+  },
+  "BountyResolveCollaborationResult": {
+    "_enum": [
+      "Success",
+      "Fail"
+    ]
+  },
+  "Behavior": {
+    "_enum": {
+      "BountyResolve": "BountyResolveCollaborationResult",
+      "BountyRemark": "BountyRemarkCollaborationResult"
+    }
+  },
+  "SessionIndex": "u32",
+  "MiningPower": "u128"
+}
